@@ -39,5 +39,3 @@ const new_games = `games?key=${process.env.REACT_APP_MYAPIKEY}&dates=${lastYear}
 export const popularGamesURL = () => `${base_url}${popular_games}`;
 export const upcomingGamesURL = () => `${base_url}${upcoming_games}`;
 export const newGamesURL = () => `${base_url}${new_games}`;
-
-console.log(upcomingGamesURL());

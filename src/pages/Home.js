@@ -6,7 +6,7 @@ import { loadGames } from "../actions/gamesAction";
 // Components
 import Game from "../components/Game";
 // Styling and Animation
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence, AnimateSharedLayout } from 'framer-motion';
 import styled from 'styled-components';
 import { useLocation } from "react-router-dom"
 
@@ -27,7 +27,8 @@ const Home = () => {
     // console.log(games);
     return (
         <GameList>
-            {pathId && <GameDetail />} 
+            <AnimateSharedLayout type="crossfade">
+            <AnimatePresence>{pathId && <GameDetail pathId={pathId} />}</AnimatePresence>
             <h2>Upcoming Games</h2>
             <Games>
                 {upcoming.map((game) => (
@@ -64,6 +65,7 @@ const Home = () => {
                     />
                 ))}
             </Games>
+            </AnimateSharedLayout>
         </GameList>
     );
 };

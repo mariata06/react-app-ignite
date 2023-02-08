@@ -12,7 +12,6 @@ import { useDispatch } from 'react-redux';
 const Nav = () => {
     const dispatch = useDispatch();
     const [textInput, setTextInput] = useState("");
-    // console.log(textInput);
 
     const inputHandler = (e) => {
         setTextInput(e.target.value);

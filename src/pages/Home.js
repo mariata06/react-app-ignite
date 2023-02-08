@@ -15,9 +15,7 @@ import { useLocation } from "react-router-dom"
 const Home = () => {
     //get the current location
     const location = useLocation();
-    // console.log(location);
     const pathId = location.pathname.split('/')[2];
-    // console.log(pathId);
     //FETCH GAMES
     const dispatch = useDispatch();
     useEffect(() => {
@@ -26,7 +24,6 @@ const Home = () => {
 
     //Получает обратно данные с игр
     const {popular, upcoming, newgames, searched } = useSelector((state) => state.games);
-    // console.log(games);
     return (
         <GameList variants={fadeIn} initial="hidden" animate="show">
             <AnimateSharedLayout type="crossfade">
